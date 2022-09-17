@@ -1,0 +1,101 @@
+Employee details
+
+
+
+public class Employee {
+    int id;
+    String name;
+    String department;
+    String companyname;
+   
+
+    Employee(int id, String name, String department, String companyname) {
+        this.id = id;
+        this.name = name;
+        this.department = department;
+        this.companyname = companyname;
+    }
+
+    public String toString () {
+        return ("id -"+id + " name -"+name + " depatment -"+department + " companyname -"+companyname + "\n");
+
+    }
+    
+}
+
+
+
+public class MainEmp {
+    public static void main(String[] args) {
+
+        Employee e1 = new Employee(1, "a", "ece", "3");
+        Employee e2 = new Employee(2, "b", "cse", "3");
+        Employee e3 = new Employee(3, "c", "eee", "3");
+        Employee e4 = new Employee(4, "d", "mech", "3");
+        Employee e5 = new Employee(5, "e", "it", "3");
+
+        System.out.println(e1);
+        System.out.println(e2);
+        System.out.println(e3);
+        System.out.println(e4);
+        System.out.println(e5);
+
+        
+
+    }
+}
+
+..............................................................................................................................................
+
+ channel and viewer
+
+public class Channel {
+    String name;
+    Viewer viewer;
+
+    Channel(String name, Viewer viewer) {
+        this.name = name;
+        this.viewer = viewer;
+    }
+
+    public String toString() {
+        return String.format("name-%s,viewer-%s", name, viewer.toString());
+    }
+
+}
+
+public class Viewer {
+
+    String name;
+    String mail;
+    int count;
+
+    public Viewer(String name, String mail, int count) {
+        this.name = name;
+        this.mail = mail;
+        this.count = count;
+
+    }
+
+    public String toString() {
+        return String.format("name:%s,mail:%s,count:%d",name,mail,count);
+    }
+
+}
+public class Main {
+    public static void main(String[] args) {
+        Viewer v1 = new Viewer("sweety", " sweety@gmail.com", 1);
+        Viewer v2 = new Viewer("tej", "tej@gmail.com", 7);
+        Viewer v3 = new Viewer("bujji", "bijji@gmail.com", 9);
+        System.out.println(v1);
+        System.out.println(v2);
+
+        System.out.println(v3);
+
+        Channel c = new Channel("tryphosa", v1);
+        System.out.println(c);
+
+    }
+}
+
+

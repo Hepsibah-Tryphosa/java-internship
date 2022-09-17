@@ -1,0 +1,135 @@
+difference b|w string buffer & string builder
+
+String - string is a set of characters.
+         string is considered as a inbuilt object.
+         string is immutable.
+         
+string Buffer - string Buffer is a mutable class
+                string Buffer is thread-safe and synchronized.
+
+string Builder - string Builder is same like string Buffer but the only difference is string Builder is not thread-safe and synchronized.
+                 due to this reason string Builder is faster than string Builder.
+
+
+.....................................................................................................................................................
+
+palindrome
+
+import java.util.Scanner;
+
+public class Palindrome {
+    public static void main(String[] args) {
+        String a = "12321";
+        String b = " ";
+        try (Scanner s = new Scanner(System.in)) {
+            a = s.nextLine();
+        }
+        for (int i = 0; i == a.length() - 1; i--) {
+            char c = a.charAt(i);
+            b = b + c;
+
+        }
+        if (b.equals(a)) {
+            System.out.println("palindrome");
+        } else {
+            System.out.println("not palindrome");
+        }
+
+    }
+
+}
+
+........................................................................................................................
+
+reverse string
+
+public class StringReverse {
+    public static void main(String[] args) {
+        String a = " this is java class output";
+        String b = "";
+        for (int i = a.length() - 1; i > 0; i--) {
+            char c = a.charAt(i);
+            b = b + c;
+        }
+            System.out.println(b);
+
+        }
+      
+    }
+
+..........................................................................................................
+
+ toggle
+
+public class Toggle {
+
+    public static String toggle(String str) {
+        String words[] = str.split("\\s");
+        String toggle = "";
+        for (String w : words) {
+            String first = w.substring(0, 1);
+            String afterfirst = w.substring(1);
+            toggle += first.toLowerCase() + afterfirst.toUpperCase() + " ";
+        }
+        return toggle.trim();
+    }
+}
+public class Main {
+
+    public static void main(String[] args) {
+        System.out.println(Toggle.toggle("my name is khan"));
+        System.out.println(Toggle.toggle("I am sonoo jaiswal"));
+    }
+}
+
+...........................................................................................................
+
+conversions
+
+import java.util.Scanner;
+
+public class Conversion {
+
+    public static void main(String[] args) {
+
+        Conversion c = new Conversion();
+
+        Scanner s = new Scanner(System.in);
+        String b = s.nextLine();
+        int a = c.stringToInt(b);
+
+        System.out.println(a);
+        int d = s.nextInt();
+        String k = c.intToString(d);
+        System.out.println(k);
+
+    }
+
+    int stringToInt(String s) {
+        int i = Integer.parseInt(s);
+        return i;
+    }
+
+    String intToString(int i) {
+        String s = "" + i;
+        return s;
+    }
+
+}
+
+.......................................................................................
+
+Singleton class
+
+ singleton class is meant for creating only one object.
+ It will be having its own constructor.
+ It provides global access to other classes through single object.
+ singleton class restricts object creation outside the class.
+				  
+				  
+how to create singleton class-
+   1. Ensure that only one instance of the class exists.
+   2. Provide global access to that instance by:
+      >  Declaring all constructors of the class to be private.
+      > Providing a static method that returns a reference to the instance. The lazy initialization concept is used to write the static methods.
+   3.  The instance is stored as a private static variable.

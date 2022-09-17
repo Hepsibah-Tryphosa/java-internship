@@ -1,0 +1,109 @@
+ comparing operators
+
+public class StringOpComparision {
+
+    public static void main(String[] args) {
+        String s1 = new String("a");
+        String s2 = new String("b");
+        String s3 = new String("a");
+
+        if (s1 == s3) {
+            System.out.println(true);
+        } else {
+            System.out.println(false);
+        }
+        boolean s = s1.equals(s3);
+        System.out.println(s);
+
+        int c = s1.compareTo(s2);
+        System.out.println(c);
+
+    }
+
+}
+...................................................................................
+
+reverse a string
+
+
+public class StringReverse {
+    public static void main(String[] args) {
+        String s = "DO NOT USE ANY BUILT IN METHODS";
+        String s1 = "";
+        for (int i = s.length() - 1; i > 0; i--) {
+            char charAt = s.charAt(i);
+
+            s1 = s1 + charAt;
+
+        }
+        System.out.println(s1);
+
+    }
+
+}
+
+............................................................................................
+
+current date and time
+
+
+import java.time.LocalDateTime;
+
+import java.time.format.DateTimeFormatter;
+
+public class TimeDate {
+    public static void main(String[] args) {
+        DateTimeFormatter d = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println(d.format(now));
+
+       DateTimeFormatter t = DateTimeFormatter.ofPattern("yyyy/MM/dd hh:mm:ss a");
+       LocalDateTime present = LocalDateTime.now();
+        System.out.println(t.format(present));
+
+    }
+
+}
+...................................................................................................
+
+methods of string 
+
+charAt() 	            Returns the character at the specified index (position) 	                                                      
+codePointAt()       	Returns the Unicode of the character at the specified index                                                     	
+codePointBefore() 	    Returns the Unicode of the character before the specified index                                                 	
+codePointCount() 	    Returns the number of Unicode values found in a string. 	                                                       
+compareTo() 	        Compares two strings lexicographically 	
+compareToIgnoreCase() 	Compares two strings lexicographically, ignoring case differences 	
+concat() 	            Appends a string to the end of another string 	String
+contains()          	Checks whether a string contains a sequence of characters 	
+contentEquals() 	    Checks whether a string contains the exact same sequence of characters of the specified CharSequence or StringBuffer 	
+copyValueOf() 	        Returns a String that represents the characters of the character array 	
+endsWith()          	Checks whether a string ends with the specified character(s) 	
+equals() 	            Compares two strings. Returns true if the strings are equal, and false if not 	
+equalsIgnoreCase()   	Compares two strings, ignoring case considerations 	
+format() 	            Returns a formatted string using the specified locale, format string, and arguments 	
+getBytes() 	            Encodes this String into a sequence of bytes using the named charset, storing the result into a new byte array 	byte[]
+getChars()          	Copies characters from a string to an array of chars 	
+hashCode()           	Returns the hash code of a string 	
+indexOf()           	Returns the position of the first found occurrence of specified characters in a string 	
+intern()            	Returns the canonical representation for the string object 	
+isEmpty() 	            Checks whether a string is empty or not 	
+lastIndexOf()          	Returns the position of the last found occurrence of specified characters in a string 	
+length()             	Returns the length of a specified string 	
+matches()              	Searches a string for a match against a regular expression, and returns the matches 	
+offsetByCodePoints() 	Returns the index within this String that is offset from the given index by codePointOffset code points 	
+regionMatches() 	    Tests if two string regions are equal 	
+replace() 	            Searches a string for a specified value, and returns a new string where the specified values are replaced 	
+replaceFirst() 	        Replaces the first occurrence of a substring that matches the given regular expression with the given replacement 	
+replaceAll() 	        Replaces each substring of this string that matches the given regular expression with the given replacement 	
+split() 	            Splits a string into an array of substrings 	
+startsWith()         	Checks whether a string starts with specified characters 	
+subSequence()       	Returns a new character sequence that is a subsequence of this sequence 	
+substring()         	Returns a new string which is the substring of a specified string 	
+toCharArray()       	Converts this string to a new character array 	
+toLowerCase() 	        Converts a string to lower case letters 	
+toString()             	Returns the value of a String object 	
+toUpperCase()       	Converts a string to upper case letters 	
+trim()               	Removes whitespace from both ends of a string 	
+valueOf()             	Returns the string representation of the specified value 	
+

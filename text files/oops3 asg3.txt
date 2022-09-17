@@ -1,0 +1,157 @@
+Abstract class vs Interface.
+
+
+1.In Abstract class we can implement default methods there itself.  where as in Interface we cannot do implementation of methods.
+2.An Abstract class is implemented using “extends” keyword and in interface we use “implements” keyword for the implementation of class.
+3.A class can only extend one Abstract class whereas in case of interface it can implements multiple interfaces.
+4.We can have constructors in Abstract class and we cannot have constructors in interface.
+5.An abstract class can extend another class and can implements multiple java interfaces where as interface can extend another java interface only.
+6.An “abstract” keyword should be given for declaring a method. whereas in interface we can declared normally.
+7.An abstract class can have abstract methods as well as normal methods whereas in interface we have all methods as abstract which we cannot define.
+8.We cannot initiate the abstract class and we cannot create the object of interface.
+9.We can use non-final variables in abstract class where as interface will have only final variable by default.
+10.syntax for abstract class.
+abstract class<class name> {
+Public abstract void <method name> (); {
+}
+}
+11.syntax for interface.
+interface <class 1> {
+Void <method name> ();
+}
+<class 2> implements <class 1> {
+Public void <method name> () {
+}
+}
+
+................................................................................................................................................................
+interface concept
+
+public class Calc {
+    public static void main(String[] args) {
+        Calculate calc = new Calculate(10, 20);
+        calc.addition();
+        calc.subtraction();
+        calc.multiplication();
+        double div = calc.division();
+        System.out.println(div);
+        System.out.println(calc);
+    }
+}
+public class Calculate implements Calculator {
+    int x;
+    int y;
+
+    Calculate(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public void addition() {
+        int add = x + y;
+        System.out.println(add);
+
+    }
+
+    public void subtraction() {
+        int sub = x - y;
+        System.out.println(sub);
+    }
+
+    public void multiplication() {
+
+        int mul = x * y;
+        System.out.println(mul);
+    }
+
+    public double division() {
+
+        double div = x % y;
+        return div;
+    }
+
+    public String toString() {
+        return "Calculate [x=" + x + ", y=" + y + "]";
+    }
+}
+public interface Calculator {
+
+    void addition();
+
+    void subtraction();
+
+    void multiplication();
+
+    double division();
+}
+
+..................................................................................................................................................
+
+read only & write only
+
+public class AuthorReadOnly{
+    private String name;
+    private String gender;
+
+    
+    public AuthorReadOnly(String name, String gender) {
+        this.name = name;
+        this.gender = gender;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+
+    public String getGender() {
+        return gender;
+    }
+
+
+
+
+    
+
+}
+
+
+public class AuthorWriteOnly {
+    String name;
+    String gender;
+
+    AuthorWriteOnly(String name,String gender){
+        this.name=name;
+        this.gender=gender;
+    }
+public void setName(String name){
+    this.name=name;
+}
+
+void setGender(String gender){
+    this.gender=gender;
+}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

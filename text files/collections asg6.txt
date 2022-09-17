@@ -1,0 +1,329 @@
+ArrayList
+
+1) ArrayList internally uses a dynamic array to store the elements.
+2) Manipulation with ArrayList is slow because it internally uses an array. If any element is removed from the array, all the other elements are shifted in memory.
+3) An ArrayList class can act as a list only because it implements List only.
+4) ArrayList is better for storing and accessing data.	
+5) The memory location for the elements of an ArrayList is contiguous.	
+6) Generally, when an ArrayList is initialized, a default capacity of 10 is assigned to the ArrayList.	
+7) To be precise, an ArrayList is a resizable array.
+
+LinkedList
+
+1)LinkedList internally uses a doubly linked list to store the elements.
+2)	Manipulation with LinkedList is faster than ArrayList because it uses a doubly linked list, so no bit shifting is required in memory.
+3) 	LinkedList class can act as a list and queue both because it implements List and Deque interfaces.
+4)  LinkedList is better for manipulating data.
+5) 	The location for the elements of a linked list is not contagious.
+6)	There is no case of default capacity in a LinkedList. In LinkedList, an empty list is created when a LinkedList is initialized.
+7)  LinkedList implements the doubly linked list of the list interface.
+
+...........................................................................................................................................................................
+sorting and printing largest number in the array list -
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Arraylistex {
+    public static void main(String[] args) {
+        ArrayList<Integer> arraylist = new ArrayList<>();
+        arraylist.add(4);
+        arraylist.add(77);
+        arraylist.add(8);
+        arraylist.add(200);
+        arraylist.add(31);
+        arraylist.add(66);
+        arraylist.add(104);
+
+        // Collections.sort(arraylist);
+        // System.out.println(arraylist);
+		
+		// int maximum=Collections.max(arraylist);
+         //   System.out.println(maximum);
+
+        for (int i = 0; i < arraylist.size(); i++) {
+
+            for (int j = arraylist.size() - 1; j > i; j--) {
+                if (arraylist.get(i) > arraylist.get(j)) {
+                    int s = arraylist.get(i);
+                    s = arraylist.get(i);
+                    s = arraylist.get(j);
+                }
+
+            }
+
+        }
+        System.out.print("[");
+        for (int i : arraylist) {
+
+            System.out.print(i + ",");
+        }
+        System.out.println("]");
+
+        int s = arraylist.size();
+        int maxvalue = arraylist.get(0);
+        for (int i = 1; i < arraylist.size(); i++) {
+            if (arraylist.get(i) > maxvalue) {
+                maxvalue=arraylist.get(i);
+            }
+            
+        }
+        System.out.println(maxvalue);
+    }
+
+}
+
+...............................................................................................................................................
+
+converting linkedlist to arraylist
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+public class Linktoarray {
+
+    public static void main(String[] args) {
+
+        LinkedList<Integer> linklist = new LinkedList<>();
+        linklist.add(1);
+        linklist.add(5);
+        linklist.add(9);
+        ArrayList<Integer> arraylist = new ArrayList<>(linklist);
+        System.out.println(arraylist);
+    }
+}
+
+...................................................................................................................................................
+
+shuffle elements
+
+import java.util.Collections;
+import java.util.LinkedList;
+
+public class Shuffel {
+    public static void main(String[] args) {
+        LinkedList<Integer> linklist = new LinkedList<>();
+        linklist.add(1);
+        linklist.add(2);
+        linklist.add(3);
+        linklist.add(4);
+        linklist.add(5);
+        linklist.add(6);
+        System.out.println(linklist);
+         Collections.shuffle(linklist);
+        System.out.println(linklist);
+
+    }
+}
+
+.........................................................................................................................................
+
+count the number of keys in map
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Countmap {
+    public static void main(String[]args){
+        HashMap<Integer,String> map=new HashMap<>();
+        map.put(1,"abc");
+        map.put(2,"def");
+        map.put(3,"ghi");
+        map.put(4,"jkl");
+        map.put(5,"mno");
+        map.put(6,"pqr");
+        map.put(7,"stu");
+        map.put(8,"vwx");
+        map.put(9,"yz");
+       int count = map.size();
+        System.out.println(count);
+    }
+}
+......................................................................................................................................
+
+pincode of the city using map
+
+
+import java.util.HashMap;
+
+public class Pincodeofcity {
+    public static void main(String[] args) {
+        HashMap<Integer, String> hashmap = new HashMap<>();
+        hashmap.put(500023, "hyderabad");
+        hashmap.put(110001, "delhi");
+        hashmap.put(403004, "goa");
+        hashmap.put(523201, "AP");
+        hashmap.put(678541, "kerala");
+
+        System.out.print(hashmap);
+
+    }
+
+}
+..................................................................................................................................
+
+linkedlist exmple
+
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Linkedlistex {
+
+    public static void main(String[] args) {
+        List<Employee> employees = new LinkedList<>();
+        Employee e1 = new Employee("sweety", 1, "eee");
+        Employee e2 = new Employee("hepsibah", 2, "ccc");
+        Employee e3 = new Employee("tryphosa", 3, "vvv");
+        employees.add(e1);
+        employees.add(e2);
+        employees.add(e3);
+        Iterator<Employee> it = employees.iterator();
+         while (it.hasNext()) {
+            Employee em = it.next();
+            System.out.println(em);
+    }
+}
+public class Employee {
+    String name;
+    int id;
+    String department;
+
+    Employee(String name, int id, String department) {
+        this.name = name;
+        this.id = id;
+        this.department = department;
+    }
+
+    public String toString() {
+        return (name + id  + department);
+    }
+}
+
+..................................................................................................................
+
+comparator vs comparable
+
+Comparable	
+
+1) Comparable provides a single sorting sequence. In other words, we can sort the collection on the basis of a single element such as id, name, and price.	
+2) Comparable affects the original class, i.e., the actual class is modified.	
+3) Comparable provides compareTo() method to sort elements.	
+4) Comparable is present in java.lang package.	
+5) We can sort the list elements of Comparable type by Collections.sort(List) method.
+	
+Comparator
+
+1)The Comparator provides multiple sorting sequences. In other words, we can sort the collection on the basis of multiple elements such as id, name, and price etc.
+2)Comparator doesn't affect the original class, i.e., the actual class is not modified.
+3)Comparator provides compare() method to sort elements.
+4)A Comparator is present in the java.util package.
+5)We can sort the list elements of Comparator type by Collections.sort(List, Comparator) method.
+
+..................................................................................................................................................................
+comparable example
+
+import java.util.*;
+
+public class EmployeeCamparable implements Comparable<EmployeeCamparable> {
+    String empName;
+    int age;
+    int empId;
+
+    public EmployeeCamparable(String name, int age, int empId) {
+        this.empName = name;
+        this.age = age;
+        this.empId = empId;
+    }
+
+    public String toString() {
+        return (empName + " " + age + " " + empId);
+    }
+
+    public String getName() {
+        return empName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public int getId() {
+        return empId;
+    }
+
+    public int compareTo(EmployeeCamparable ec) {
+        if (empId == ec.getId())
+            return 0;
+        else if (empId > getId())
+            return 1;
+        else
+            return -1;
+    }
+
+    public static void main(String[] args) {
+        ArrayList<EmployeeCamparable> al = new ArrayList<>();
+        al.add(new EmployeeCamparable("hepsibah", 22, 1));
+        al.add(new EmployeeCamparable("tryphosa", 23, 2));
+        al.add(new EmployeeCamparable("sweety", 24, 3));
+        al.add(new EmployeeCamparable("hepsi", 25, 4));
+
+        Collections.sort(al);
+        System.out.println(al);
+
+    }
+}
+
+.........................................................................................................
+ comparator example
+ 
+ import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class EmployeeComparator implements Comparator<Employee> {
+
+    public int compare(Employee e1, Employee e2) {
+        if (e1.empId == e2.empId) {
+            return 0;
+        } else if (e1.empId > e2.getEmpId()) {
+            return 1;
+        } else
+            return -1;
+    }
+
+    public static void main(String[] args) {
+        ArrayList<Employee> al = new ArrayList<>();
+        al.add(new Employee("hepsibah", 25, 1));
+        al.add(new Employee("tryphosa", 27, 5));
+        al.add(new Employee("sweety", 24, 9));
+        al.add(new Employee("hepsi", 23, 6));
+
+        EmployeeComparator ec = new EmployeeComparator();
+        Collections.sort(al, ec);
+        System.out.println(al);
+    }
+}
+public class Employee {
+    String empName;
+    int age;
+    int empId;
+    public Employee(String empName, int age, int empId) {
+        this.empName = empName;
+        this.age = age;
+        this.empId = empId;
+		 public String getEmpName() {
+        return empName;
+    }
+    public int getAge() {
+        return age;
+    }
+    public int getEmpId() {
+        return empId;
+    }
+    public String toString() {
+        return "Employee [age=" + age + ", empId=" + empId + ", empName=" + empName + "]";
+    }
+ 
+
+

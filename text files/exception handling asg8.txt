@@ -1,0 +1,194 @@
+advantages of exception handling
+
+ > Provision to Complete Program Execution
+ > Easy Identification of Program Code and Error-Handling Code
+ > Propagation of Errors
+ > Meaningful Error Reporting
+ > Identifying Error Types
+ 
+ ....................................................................
+ 
+ can we have the try block with out catch block?
+  >Yes, It is possible to have a try block without a catch block by using a final block.
+  As we know, a final block will always execute even there is an exception occurred in a try block, except System. exit() it will execute always.
+  
+  ......................................................................
+  
+  throw & throws
+  
+  throw
+ 	> Java throw keyword is used throw an exception explicitly in the code, inside the function or the block of code. 	
+ 	> Type of exception Using throw keyword, we can only propagate unchecked exception i.e., the checked exception cannot be propagated using throw only. 
+	> The throw keyword is followed by an instance of Exception to be thrown. 	
+	> throw is used within the method. 	
+	> We are allowed to throw only one exception at a time i.e. we cannot throw multiple exceptions. 	
+
+  throws
+    > Java throws keyword is used in the method signature to declare an exception which might be thrown by the function while the execution of the code.
+	> Using throws keyword, we can declare both checked and unchecked exceptions. However, the throws keyword can be used to propagate checked exceptions only.
+	> The throws keyword is followed by class names of Exceptions to be thrown.
+	> throws is used with the method signature.
+	> We can declare multiple exceptions using throws keyword that can be thrown by the method. For example, main() throws IOException, SQLException.
+	
+..........................................................................................................................................................................
+
+try catch finally
+
+class Main {
+    public static void main (String args[]) {
+        
+        try
+        {
+            System.out.println ("::Try Block::");
+            int data = 125 / 5;
+            System.out.println ("Result:" + data);
+        } 
+        
+        catch (NullPointerException e) {
+            System.out.println ("::Catch Block::");
+            System.out.println (e);
+        } 
+        
+        finally {
+            System.out.println (":: Finally Block::");
+            System.out.println ("No Exception::finally block executed");
+        } 
+        System.out.println ("rest of the code...");
+    } 
+}
+
+...................................................................................................................................................................
+
+nested try block
+
+    public class NestedTryBlock{    
+     public static void main(String args[]){   
+      try{    
+        try{    
+         System.out.println("going to divide by 0");    
+         int b =39/0;    
+       }   
+        catch(ArithmeticException e){
+        System.out.println(e);  
+        }    
+        try{    
+        int a[]=new int[5];    
+         a[5]=4;    
+         }  
+        catch(ArrayIndexOutOfBoundsException e){  
+           System.out.println(e);  
+        }    
+      
+          
+        System.out.println("other statement");    
+      }  
+      catch(Exception e)  
+      {  
+        System.out.println("handled the exception (outer catch)");  
+      }    
+        
+      System.out.println("normal flow..");    
+     }    
+    }  
+	
+.....................................................................................................................................
+
+  difference b|w error and exception
+
+   Error	
+   
+	> Classified as an unchecked type 
+	> It belongs to java.lang.error 
+	> It is irrecoverable
+	> It can't be occur at compile time 
+	> OutOfMemoryError ,IOError 
+	
+	
+	Exception
+
+     > Classified as checked and unchecked
+     > It belongs to java.lang.Exception 
+     > It is recoverable
+     > It can occur at run time compile time both 
+     > NullPointerException , SqlException 	 
+	 
+.....................................................................................................................................
+
+final ,finally ,finalize
+
+final-
+
+ > final is the keyword and access modifier which is used to apply restrictions on a class, method or variable.
+ >Final keyword is used with the classes, methods and variables.
+ > (1) Once declared, final variable becomes constant and cannot be modified.
+   (2) final method cannot be overridden by sub class.
+   (3) final class cannot be inherited.
+ > Final method is executed only when we call it.
+
+finally-
+
+ > finally is the block in Java Exception Handling to execute the important code whether the exception occurs or not.
+ > Finally block is always related to the try and catch block in exception handling.
+ > (1) finally block runs the important code even if exception occurs or not.
+   (2) finally block cleans up all the resources used in try block 
+ > Finally block is executed as soon as the try-catch block is executed.
+ > It's execution is not dependant on the exception. 
+ 
+finalize-
+ 
+  > finalize is the method in Java which is used to perform clean up processing just before object is garbage collected.
+  > finalize() method is used with the objects.
+  > finalize method performs the cleaning activities with respect to the object before its destruction.
+  > finalize method is executed just before the object is destroyed.
+  
+..............................................................................................................................................  
+ 
+ what is object class?
+ 
+  > The Object class defines the basic state and behavior that all objects must have, 
+     such as the ability to compare oneself to another object, to convert to a string,
+     to wait on a condition variable, 
+     to notify other objects that a condition variable has changed,
+     and to return the object's class.
+	 
+methods in object class-
+
+    toString() Method.
+    hashCode() Method.
+    equals(Object obj) Method.
+    getClass() method.
+    finalize() method.
+    clone() method.
+    wait(), notify() notifyAll() Methods.	 
+
+...........................................................................................................................................
+
+voting program using exception handling
+
+
+import java.util.*;
+
+public class Voting{
+    
+
+
+   public static void main(String args[])
+   {
+      Scanner sc = new Scanner(System.in);
+      System.out.println("Enter your Name: ");
+      String name=sc.nextLine();
+      System.out.println("Enter your age: ");
+      int age=sc.nextInt();
+      if((age>=18)&&(age<=100))
+      {
+          System.out.println("Congratulation "+name+", You are eligible for Voting");
+      }
+      else
+      {
+          System.out.println("Sorry "+name+", You are not eligible for voting");
+      }      
+  }
+}
+	
+	
+	 
