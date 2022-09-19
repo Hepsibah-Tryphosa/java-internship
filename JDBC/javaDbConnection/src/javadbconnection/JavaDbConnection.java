@@ -13,10 +13,11 @@ public class JavaDbConnection {
             Logger.getLogger(JavaDbConnection.class.getName()).log(Level.SEVERE, null, ex);
         }
         JavaDbConnection jdc = new JavaDbConnection();
-        jdc.dropTable();
-        jdc.createTable();
-        jdc.insertData();
+       // jdc.dropTable();
+        //jdc.createTable();
+        //jdc.insertData();
         jdc.readData();
+       // jdc.insertDataWithPs();
     }
 
     public Connection getConnection() throws SQLException {
@@ -75,6 +76,25 @@ public class JavaDbConnection {
             int rs = stmt.executeUpdate("insert into student_info values('abc123','hepsibah','hyderabad',22,'female','1999-12-01',17) ");
             System.out.println(rs);
         } catch (SQLException e) {
+            System.out.println(e);
+        }
+    }
+
+    public void insertDataWithPs() {
+        try ( Connection con = getConnection()) {
+            String s = "insert into student_info values(?,?,?,?,?,?,?) ";
+            PreparedStatement ps = con.prepareStatement(s);
+            ps.setString(1, "123asd");
+            ps.setString(2, "sweety");
+            ps.setString(3, "nagaram");
+            ps.setInt(4, 7);
+            ps.setString(5, "female");
+            ps.setString(6, "2000-01-12");
+            ps.setInt(7, 2);
+            int e = ps.executeUpdate();
+            System.out.println(e);
+
+        } catch (Exception e) {
             System.out.println(e);
         }
     }
